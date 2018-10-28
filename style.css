@@ -1,0 +1,51 @@
+
+li {
+    list-style: none;
+    float: left;
+}
+
+    li a {
+        display: block;
+        text-decoration: none;
+        padding: 3px;
+        background-color:limegreen;
+        color:blue;
+        width: 45px;
+        margin-left: 5px;
+        font-size: 8pt;
+        border-radius: 20px;
+    }
+
+        li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+#header img {
+    border-radius: 20px;
+    width: 90px;
+    height: 80px;
+    margin: 0px auto 0px auto;
+}
+
+#home img {
+    border-radius: 20px;
+    width: 140px;
+    height: 80px;
+    margin: 0px auto 0px auto;
+}
+
+#style img {
+    border-radius: 20px;
+    width: 140px;
+    height: 80px;
+    margin: 0px auto 0px auto;
+}
+
+#bill img {
+    border-radius: 20px;
+    width: 140px;
+    height: 80px;
+    margin: 0px auto 0px auto;
+}

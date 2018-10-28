@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ইয়থ চয়েজ সেলুন</title>
+
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:navajowhite;">
+
+
+    <div>
+        <p style="text-align:center;background-color:orangered;border-radius:20px;width:100px;margin:0px auto 3px auto;">গুগল ম্যাপ</p>
+        <p style="font-size:10pt;">
+            নিচে গুগল ম্যাপে আমাদের সেলুনের লোকেশন চিহ্নিত করে দেয়া আছে। সকলের প্রতি নিমন্ত্রণ রইলো।
+        </p>
+    </div>
+
+    <div id="mapholder" style="height:300px; "></div>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+
+
+
+    <script>
+        function getloc() {
+            if ('geolocation' in navigator) {
+                navigator.geolocation.getCurrentPosition(showpos, showerr)
+            }
+        }
+        function showpos(pos) {
+            var moption = {
+                center: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+                zoom: 16
+            };
+            var map = new google.maps.Map(document.getElementById("mapholder"), moption);
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+                map: map,
+                animation: google.maps.Animation.BOUNCE
+
+            })
+            var infowindow = new google.maps.InfoWindow({
+                position: new google.maps.LatLng(23.671517200000004, 90.46935859999999),
+                map: map,
+                content: "ইয়থ চয়েজ সেলুন"
+
+            })
+
+        }
+
+        function showerr(err) {
+            console.log(err);
+            switch (err.code) {
+                case err.PERMISSION_DENIED:
+                    document.getElementById("mapholder").innerHTML = "User denied";
+                    break;
+                case err.POSITION_UNAVAILABLE:
+                    document.getElementById("mapholder").innerHTML = "User location unavailable ";
+                    break;
+                case err.TIMED_OUT:
+                    document.getElementById("mapholder").innerHTML = "Time Out ";
+                    break;
+                case err.UNKNOWN:
+                    document.getElementById("mapholder").innerHTML = "Unknown error ";
+                    break;
+
+            }
+
+        }
+
+
+        addEventListener("load", getloc(), false)
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHSmL5cnbophLnlF6NNwGSXMRpIOVjeJo&callback=showpos"></script>
+
+</body>
+</html>
