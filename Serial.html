@@ -8,15 +8,12 @@
     <script src="jquery.unobtrusive-ajax.min.js"></script>
     <link href="style.css" rel="stylesheet" />
     <style>
-        select, input, textarea {
-            font-family: 'Lucida Calligraphy';
-            font-size: 9pt;
-            width: 200px;
-        }
+
 
         #main {
-           
-            width: 200px;
+            margin: 0px auto 0px auto;
+            width: 290px;
+            font-size:9pt;
         }
 
         label {
@@ -25,33 +22,42 @@
         }
 
         span {
-            font-size: 15pt;
+            
             color: red;
-            font-family: 'Lucida Calligraphy';
+            margin: 0px 25% 0px 25%;
         }
 
         #submit {
-            width: 100px;
-            font-size: 12pt;
+            float:right;
         }
+        img {
+            margin: 0px auto 0px auto;
+            border-radius:20px;
+            padding:5px;
+        }
+
     </style>
     <script>
         function validate() {
            
             var isvalid = true;
             if ($("#name").val().length == 0) {
+                $("#name").focus();
                 $("#nameErr").html(" নাম লিখুন !")
                 isvalid = false;
                 return isvalid;
+                
             }
             else {
                 $("#nameErr").hide();
             }
             var isvalid = true;
             if ($("#email").val().length == 0) {
+                $("#email").focus();
                 $("#emailErr").html(" মোবাইল নাম্বার লিখুন !")
                 isvalid = false;
                 return isvalid;
+                
             }
             else {
                 $("#emailErr").hide();
@@ -67,41 +73,22 @@
         <p style="text-align:center;background-color:orangered;border-radius:20px;width:100px;margin:0px auto 3px auto;">সিরিয়াল</p>
     </div>
 
-        <p style="font-size:10pt;">সিরিয়াল নিতে হলে নাম ও মোবাইল নাম্বার লিখে কনফার্ম বাটন চাপুন</p>
-        <!--<table>
-            <tr>
-                <td><label>Name</label></td>
-                <td><input id="name" type="text" name="name" value="" /></td>
-            </tr>
-            <tr>
-                <td><label>Mobile No</label></td>
-                <td><input id="mobileNo" type="text" name="mobileNo" value="" /></td>
+    <p style="font-size:9pt;">সিরিয়াল নিতে নাম ও মোবাইল নাম্বার লিখে কনফার্ম বাটন চাপুন</p>
 
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <br />
-                    <input type="button" id="conf" value="কনফার্ম" />
-                    <input type="reset" onclick="location.reload();" value="মুছুন" />
-                    <br /><br />
-                </td>
-            </tr>
-        </table>-->
 
-  
+
     <div id="main">
         <form action="2.html" novalidate onsubmit="return validate()">
             <fieldset>
-                <legend><h3>সিরিয়াল ফর্ম</h3></legend>
-                
+                <legend>সিরিয়াল ফর্ম</legend>
+
                 <label for="name">নাম : </label><input type="text" id="name" name="name" /><span id="nameErr"></span><br /><br />
                 <label for="email">মোবাইল : </label><input type="text" id="email" name="email" /><span id="emailErr"></span><br /><br />
-               
+
                 <input type="submit" id="submit" name="submit" value="কনফার্ম" />
             </fieldset>
         </form>
     </div>
-
+    <img src="Images/images (31).jpg" />
 </body>
 </html>
