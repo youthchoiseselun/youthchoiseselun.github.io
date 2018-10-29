@@ -9,20 +9,20 @@
 </head>
 
 <body style="background-color:navajowhite;">
-
-    <div style="margin:-20px auto -35px auto">
+    <p style="font-size:10pt;margin-top:-5px;">
+        নিচে গুগল ম্যাপে আমাদের সেলুনের লোকেশন চিহ্নিত করে দেয়া আছে। সকলের প্রতি নিমন্ত্রণ রইলো।
+    </p>
+    <div style="margin:-25px auto -20px auto">
         <marquee direction="down" behavior="alternate">
             <marquee behavior="alternate">
                 <p style="text-align:center;background-color:orangered;border-radius:20px;width:100px;">গুগল ম্যাপ</p>
             </marquee>
         </marquee>
     </div>
-   
-        
-        <p style="font-size:10pt;">
-            নিচে গুগল ম্যাপে আমাদের সেলুনের লোকেশন চিহ্নিত করে দেয়া আছে। সকলের প্রতি নিমন্ত্রণ রইলো।
-        </p>
-   
+
+
+
+
 
     <div id="mapholder" style="height:300px; "></div>
     <script src="~/Scripts/jquery-1.8.3.min.js"></script>
@@ -60,13 +60,13 @@
             console.log(err);
             switch (err.code) {
                 case err.PERMISSION_DENIED:
-                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! আপনার মোবাইলের লোকেশন অপশনটি বন্ধ করা আছে। অনুগ্রহ করে আপনার মোবাইলের সেটিং অপশনে গিয়ে লোকেশন অন করে আসুন।";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! আপনার মোবাইলের লোকেশন অপশনটি বন্ধ করা আছে। গুগল ম্যাপ দেখতে চাইলে অনুগ্রহ করে আপনার মোবাইলের সেটিং অপশনে গিয়ে লোকেশন অন করে আসুন।";
                     break;
                 case err.POSITION_UNAVAILABLE:
-                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! লোকেশন খুজে পাওয়া যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! লোকেশন খুজে পাওয়া যাচ্ছে না। গুগল ম্যাপ দেখতে চাইলে অনুগ্রহ করে আবার চেষ্টা করুন।";
                     break;
                 case err.TIMED_OUT:
-                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! ধিরগতি নেটের কারনে লোকেশন দেখানো যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! ধিরগতি নেটের কারনে লোকেশন দেখানো যাচ্ছে না। গুগল ম্যাপ দেখতে চাইলে অনুগ্রহ করে আবার চেষ্টা করুন।";
                     break;
                 case err.UNKNOWN:
                     document.getElementById("mapholder").innerHTML = "Unknown error ";
