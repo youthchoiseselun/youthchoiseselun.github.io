@@ -60,13 +60,13 @@
             console.log(err);
             switch (err.code) {
                 case err.PERMISSION_DENIED:
-                    document.getElementById("mapholder").innerHTML = "User denied";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! আপনার মোবাইলের লোকেশন অপশনটি বন্ধ করা আছে। অনুগ্রহ করে আপনার মোবাইলের সেটিং অপশনে গিয়ে লোকেশন অন করে আসুন।";
                     break;
                 case err.POSITION_UNAVAILABLE:
-                    document.getElementById("mapholder").innerHTML = "User location unavailable ";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! লোকেশন খুজে পাওয়া যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।";
                     break;
                 case err.TIMED_OUT:
-                    document.getElementById("mapholder").innerHTML = "Time Out ";
+                    document.getElementById("mapholder").innerHTML = "দুঃখিত ! ধিরগতি নেটের কারনে লোকেশন দেখানো যাচ্ছে না। অনুগ্রহ করে আবার চেষ্টা করুন।";
                     break;
                 case err.UNKNOWN:
                     document.getElementById("mapholder").innerHTML = "Unknown error ";
